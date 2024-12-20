@@ -28,6 +28,7 @@ class GitMerkleDemo {
             .fold("") { str, byte -> str + "%02x".format(byte) }
     }
 
+    // it as same as doing git init
     fun buildProject() {
         val files = File(workingDirectory).listFiles()?.filter { it.isFile } ?: return
 
@@ -44,6 +45,7 @@ class GitMerkleDemo {
         println("Project state saved!")
     }
 
+    // git status
     fun checkStatus() {
         if (previousTreeRoot == null) {
             println("No previous state found. Run buildProject first.")
